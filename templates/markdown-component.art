@@ -1,0 +1,29 @@
+import React, { useEffect } from 'react'
+{{if imports}}
+  {{imports}}
+{{/if}}
+
+const content = <>{{ content }}</>
+const nativeContent = {{ nativeContent }}
+const native = {{ isNative }}
+const toc = {{ toc }}
+
+const MarkdownComponent = ({ onLoad, className }) => {
+  useEffect(() => {
+    onLoad?.({
+      toc,
+      html: nativeContent
+    })
+  }, [])
+  return (
+    <div
+      className={`${className ? className + ' ' : ''}vite-markdown`}
+      dangerouslySetInnerHTML={native ? { __html: nativeContent } : undefined}
+    >
+      {native ? null : content}
+    </div>
+  )
+}
+
+export { toc, nativeContent as html }
+export default MarkdownComponent
