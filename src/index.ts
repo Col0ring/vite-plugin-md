@@ -2,6 +2,7 @@ import { Plugin } from 'vite'
 import { SourceDescription } from 'rollup'
 import { transform } from 'esbuild'
 import { markdown2jsx, MarkedRenderOptions } from './utils'
+export * from './type'
 const mdRegex = /\.md$/
 
 export type mdPluginOptions = MarkedRenderOptions

@@ -4,7 +4,7 @@ export interface TocProps {
   slug: string
 }
 
-interface onLoadProps {
+export interface onLoadProps {
   toc: TocProps[]
   html: string
 }
